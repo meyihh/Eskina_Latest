@@ -1,0 +1,360 @@
+/* =========================
+   🌐 BASE LAYOUT
+   ========================= */
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  background: #f8f6f4; 
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  color: #333;
+}
+
+/* =========================
+   🧭 HEADER
+   ========================= */
+header { 
+  background: #4a2f22; 
+  color: white; 
+  padding: 15px 25px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
+}
+header h1 { 
+  margin: 0; 
+  font-size: 22px; 
+  letter-spacing: 0.5px; 
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  border-radius: 150px;
+}
+
+/* Logout Button */
+.logout-btn { 
+  background: #fff; 
+  color: #4a2f22; 
+  padding: 10px 18px; 
+  border-radius: 8px; 
+  font-weight: 600; 
+  text-decoration: none; 
+  transition: all 0.3s ease; 
+}
+.logout-btn:hover { 
+  background: #f0e7e2; 
+  transform: translateY(-2px); 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+}
+
+/* =========================
+   👤 PROFILE SECTION
+   ========================= */
+.profile-section {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 20px;
+}
+
+.profile-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Camera Section */
+.camera-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.camera-section .video-preview {
+  border-radius: 10px;
+  background: #000;
+  width: 320px;
+  height: 240px;
+}
+.capture-form button {
+  margin: 10px 0;
+}
+
+/* Staff Details Section */
+.staff-details-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+.staff-details-container h2 {
+  color: #4a2f22;
+  font-weight: 600;
+  text-align: center;
+}
+.staff-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.staff-details-form label {
+  font-weight: 600;
+}
+.staff-details-form input {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+.staff-details-form input::placeholder {
+  text-align: left;
+  color: #999;
+}
+.save-details-btn {
+  background: #4a2f22;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.save-details-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.message {
+  font-weight: bold;
+  color: crimson;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* =========================
+   📅 ATTENDANCE SECTION
+   ========================= */
+.attendance-section {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.attendance-container {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
+}
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+.attendance-title, h2 {
+  text-align: center;
+}
+.attendance-table th,
+.attendance-table td {
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  text-align: center;
+}
+.attendance-table th {
+  background: #4a2f22;
+  color: white;
+}
+.thumb-img {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+.thumb-img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   🪟 MODAL
+   ========================= */
+.modal {
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 10px;
+}
+.close {
+  position: fixed;
+  top: 20px; right: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.video-preview, .preview-image {
+  transform: scaleX(-1);
+}
+
+/* =========================
+   📱 MOBILE VIEW OPTIMIZATION
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Base Adjustments */
+  body {
+    font-size: 15px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 18px;
+  }
+  .logout-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+  .logo {
+    width: 40px;
+  }
+
+  /* Profile Section */
+  .profile-section,
+  .profile-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .camera-section {
+    width: 100%;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  }
+  .camera-section .video-preview {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+  }
+  .capture-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .capture-form button {
+    width: 90%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+
+  .staff-details-container {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  }
+  .staff-details-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .staff-details-form {
+    gap: 12px;
+  }
+  .staff-details-form label {
+    font-size: 14px;
+  }
+  .staff-details-form input {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .staff-details-form small {
+    font-size: 12px;
+    color: #777;
+  }
+  .save-details-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* Attendance Section */
+  .attendance-section {
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .attendance-container {
+    width: 100%;
+    padding: 15px;
+  }
+  .attendance-title {
+    font-size: 18px;
+  }
+  .attendance-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  .attendance-table th,
+  .attendance-table td {
+    padding: 8px 10px;
+  }
+  .thumb-img {
+    width: 40px;
+    height: 35px;
+  }
+
+  /* Message / Alert */
+  .alert-box {
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    background: #f7f0ec;
+    color: #4a2f22;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  /* Modal */
+  .modal-content {
+    max-width: 90%;
+    max-height: 70%;
+  }
+  .close {
+    font-size: 30px;
+    top: 10px;
+    right: 15px;
+  }
+}

@@ -1,0 +1,347 @@
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+body {
+  background: #c4b397;
+  color: #3a2d1f;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+
+/* ===============================
+   NAVBAR
+=============================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #442c14;
+  border-bottom: 2px solid #0d0d0c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: #f8f4e1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.brand .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #af8f6f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.brand .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.brand span {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+.center-icons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+}
+
+
+.icon-btn .circle {
+  background: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(84, 51, 16, 0.15);
+  transition: transform 0.25s ease, border 0.25s ease;
+}
+
+
+.icon-btn .icon-img {
+  width: 20px;
+  height: 20px;
+}
+
+
+.icon-btn.active .circle {
+  border: 2px solid #74512d;
+  transform: translateY(30px);
+}
+
+
+.nav-links a.logout-btn {
+  background: rgba(248, 244, 225, 0.2);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+
+.nav-links a.logout-btn:hover {
+  background: #74512d;
+}
+  .notif-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+/* ===============================
+   MAIN CONTENT
+=============================== */
+.content {
+  padding: 32px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+
+.content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  text-align: center;
+  color: #3a2d1f;
+}
+
+
+/* ===============================
+   ORDERS LAYOUT (DETAILS + MAP)
+=============================== */
+.orders-wrapper {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+
+/* LEFT: Customer Details */
+.order-details {
+  flex: 0 0 35%;
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  max-height: 520px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a78c68 #f1e6d0;
+}
+
+
+.order-details::-webkit-scrollbar {
+  width: 8px;
+}
+.order-details::-webkit-scrollbar-thumb {
+  background: #a78c68;
+  border-radius: 8px;
+}
+.order-details::-webkit-scrollbar-track {
+  background: #f1e6d0;
+}
+
+
+.order-details h3 {
+  margin-bottom: 18px;
+  color: #3e2723;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px solid #d3b58a;
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+
+
+/* Individual order card */
+.order-card {
+  background: #faf8f4;
+  border: 1px solid #e4d7c4;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+
+.detail-item {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+.detail-item strong {
+  color: #442c14;
+}
+
+
+/* RIGHT: Map */
+.order-map {
+  flex: 0 0 60%;
+  height: 520px;
+  background: #f7f7f7;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* ====== ORDER CARD STYLES ====== */
+.order-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.order-card:hover {
+  transform: scale(1.01);
+}
+.order-card .status-dropdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.status-dropdown select {
+  border: none;
+  background: #f5f5f5;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+}
+.detail-item {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+.detail-item strong {
+  color: #333;
+}
+
+/* ====== LAYOUT ====== */
+.orders-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.order-details {
+  flex: 1;
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 20px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.order-map {
+  flex: 1;
+  height: 85vh;
+}
+
+/* ====== SCROLL BAR ====== */
+.order-details::-webkit-scrollbar {
+  width: 8px;
+}
+.order-details::-webkit-scrollbar-thumb {
+  background: rgba(87, 54, 7, 0.5);
+  border-radius: 8px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=============================== */
+@media (max-width: 900px) {
+  .orders-wrapper {
+    flex-direction: column;
+  }
+
+
+  .order-details,
+  .order-map {
+    flex: 1 1 100%;
+    max-height: none;
+  }
+
+
+  .order-map {
+    height: 360px;
+  }
+}
+
+
+/* ===============================
+   MOBILE TABLE FALLBACK
+=============================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 14px 10px;
+  }
+
+
+  .center-icons {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+
+  .content {
+    padding: 18px;
+  }
+}
+
+
+

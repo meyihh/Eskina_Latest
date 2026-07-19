@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Fixed Navbar */
+nav {
+    background-color: #3D2419;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+}
+
+.logo img {
+    width: 50px;       /* logo size */
+    height: 50px;
+    border-radius: 50%; /* makes it a perfect circle */
+    margin-right: 20px; /* space between image and text */
+    object-fit: cover;  /* crop nicely if needed */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    margin: 0 5px;
+    margin-right: 55px;
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5px;
+    transition: 0.3s;
+    position: relative;
+
+}
+
+/* Underline on hover */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    background-color: #C4B397;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {    
+    color: #C4B397;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: #C4B397;
+}
+
+.nav-links a.active::after {
+    width: 100%; 
+}
+
+/* Hamburger icon (hidden by default) */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    margin-right: 50px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #3D2419;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        height: auto; /* adjust for mobile */
+        padding: 15px 20px;
+    }
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 100px auto;  /* center and add space from navbar */
+}
+
+.contact-info h2 {
+    flex: 1;
+    color: #3D2419;
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+    font-size: 35px;
+    margin-top: 70px;
+}
+
+.contact-info h3 {
+    flex: 1;
+    color: #3D2419;
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.contact-info .icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* Left column (Contact Info) */
+.contact-info {
+    flex: 1;
+    font-size: 18px;
+    color: black
+}
+
+.location-link {
+  color: black;
+  text-decoration: none;
+}
+
+.location-link:hover {
+  text-decoration: underline; /* optional */
+  color: #3D2419;
+}
+
+.email-link {
+  color: black;          /* keep text black */
+  text-decoration: none;
+  font-size: 18px; 
+}
+
+.email-link:hover {
+  text-decoration: underline; /* optional hover effect */
+  color: #3D2419;
+}
+
+
+.opening-hours {
+    flex: 1;
+    border-left: 1px solid #ccc; 
+    padding-left: 40px;
+}
+
+.opening-hours h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 25px;
+    color: #3D2419;
+    margin-bottom: 30px;
+    margin-top: 70px;
+}
+
+.opening-hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opening-hours li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.social-link {
+  color: black;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  text-decoration: underline; /* optional hover effect */
+  color: #3D2419;
+}
+
+.services p {
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #3D2419;
+    margin-top: 30px;
+}
+
+
+/* Responsive (stack on mobile) */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+        margin: 50px 20px; /* reduce top spacing on mobile */
+    }
+
+    .contact-info h2 {
+        font-size: 28px;
+    }
+
+    .contact-info h3 {
+        font-size: 20px;
+    }
+
+    .opening-hours {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .opening-hours h2 {
+        font-size: 22px;
+    }
+
+    .opening-hours li {
+        font-size: 16px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #3D2419;
+    color: white;
+    padding: 30px 50px 10px;
+ }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-left img {
+      width: 70px;       /* logo size */
+      height: 70px;
+      border-radius: 50%; /* makes it a perfect circle */
+      margin-right: 20px; /* space between image and text */
+      object-fit: cover; 
+    }
+
+    .footer-left h2 {
+        margin: 0;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: 'Noto Serif', serif;
+        font-weight: 700;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-right a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+   .footer-right .social-link {
+    color: white;
+    text-decoration: none;
+    }
+
+    .footer-right .social-link:hover {
+    text-decoration: none; /* optional hover effect */
+    }
+
+    .footer-right .email-link {
+    color: white;
+    text-decoration: none;
+    }
+
+    .footer-right .email-link:hover {
+    text-decoration: none; /* optional hover effect */
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;       /* stack vertically */
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-left {
+    flex-direction: column;       /* logo on top, text below */
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-left img {
+    margin-right: 0;              /* remove extra margin */
+    margin-bottom: 10px;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+}
